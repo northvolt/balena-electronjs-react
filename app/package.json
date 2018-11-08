@@ -1,6 +1,6 @@
 {
   "name": "resin-electronjs",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "electronJS-based resin application",
   "main": "main.js",
   "homepage": "./",
@@ -27,9 +27,13 @@
   "dependencies": {
     "electron": "1.7.13",
     "electron-rebuild": "^1.7.2",
+    "eslint-config-airbnb-base": "^11.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint": "^3.14.1",
     "lockfile": "^1.0.4",
     "react": "16.5.2",
-    "react-dom": "16.5.2"
+    "react-dom": "16.5.2",
+    "react-scripts": "0.8.5"
   },
   "author": "Carlo Maria Curinga",
   "license": "Apache-2.0",
@@ -41,9 +45,5 @@
     "strict": true
   },
   "devDependencies": {
-    "eslint": "^3.14.1",
-    "eslint-config-airbnb-base": "^11.0.1",
-    "eslint-plugin-import": "^2.2.0",
-    "react-scripts": "0.8.5"
   }
 }
