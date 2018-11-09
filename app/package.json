@@ -1,7 +1,7 @@
 {
-  "name": "resin-electronjs",
+  "name": "balena-electronjs",
   "version": "1.0.2",
-  "description": "electronJS-based resin application",
+  "description": "electronJS-based balena application",
   "main": "main.js",
   "homepage": "./",
   "scripts": {
@@ -16,10 +16,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/resin-io/resin-electronjs.git"
+    "url": "git+https://github.com/balena-io-playground/balena-electronjs-react.git"
   },
   "keywords": [
-    "resin",
+    "balena",
     "io",
     "electron",
     "js"
@@ -38,7 +38,7 @@
   "author": "Carlo Maria Curinga",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/resin-io/resin-electronjs/issues"
+    "url": "https://github.com/balena-io-playground/balena-electronjs-react/issues"
   },
   "jshintConfig": {
     "esversion": 6,
