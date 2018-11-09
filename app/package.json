@@ -1,13 +1,14 @@
 {
-  "name": "resin-electronjs",
-  "version": "0.2.0",
-  "description": "electronJS-based resin application",
+  "name": "balena-electronjs",
+  "version": "1.0.2",
+  "description": "electronJS-based balena application",
   "main": "main.js",
   "homepage": "./",
   "scripts": {
-    "dev": "react-scripts start & URL_LAUNCHER_NODE=1 URL_LAUNCHER_URL=http://localhost:3000 NODE_ENV=development electron .",
+    "dev": "BROWSER=none react-scripts start & URL_LAUNCHER_NODE=1 URL_LAUNCHER_URL=http://localhost:3000 NODE_ENV=development electron .",
     "lint": "eslint .",
     "start": "URL_LAUNCHER_NODE=1 NODE_ENV=production startx ./node_modules/electron/dist/electron .",
+    "local": "NODE_ENV=production electron .",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
@@ -15,33 +16,34 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/resin-io/resin-electronjs.git"
+    "url": "git+https://github.com/balena-io-playground/balena-electronjs-react.git"
   },
   "keywords": [
-    "resin",
+    "balena",
     "io",
     "electron",
     "js"
   ],
   "dependencies": {
-    "electron": "^1.4.15",
-    "electron-rebuild": "^1.5.7",
-    "react": "15.4.2",
-    "react-dom": "15.4.2"
+    "electron": "1.7.13",
+    "electron-rebuild": "^1.7.2",
+    "eslint-config-airbnb-base": "^11.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint": "^3.14.1",
+    "lockfile": "^1.0.4",
+    "react": "16.5.2",
+    "react-dom": "16.5.2",
+    "react-scripts": "0.8.5"
   },
   "author": "Carlo Maria Curinga",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/resin-io/resin-electronjs/issues"
+    "url": "https://github.com/balena-io-playground/balena-electronjs-react/issues"
   },
   "jshintConfig": {
     "esversion": 6,
     "strict": true
   },
   "devDependencies": {
-    "eslint": "^3.14.1",
-    "eslint-config-airbnb-base": "^11.0.1",
-    "eslint-plugin-import": "^2.2.0",
-    "react-scripts": "0.8.5"
   }
 }
