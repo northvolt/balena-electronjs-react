@@ -2,7 +2,9 @@
 export URL_LAUNCHER_NODE=1
 export NODE_ENV=production
 export TFT=1
-export TFT_ROTATE=90
+export TFT_ROTATE=180
+export URL_LAUNCHER_TOUCH=1
+
 # By default docker gives us 64MB of shared memory size but to display heavy
 # pages we need more.
 umount /dev/shm && mount -t tmpfs shm /dev/shm
@@ -13,7 +15,9 @@ umount /dev/shm && mount -t tmpfs shm /dev/shm
 # it saves you a LOT of resources avoiding full-desktops envs
 
 rm /tmp/.X0-lock &>/dev/null || true
+# rm /tmp/resin/resin-updates.lock &>/dev/null || true
 
+# startx
 if [ ! -c /dev/fb1 ] && [ "$TFT" = "1" ]; then
   modprobe spi-bcm2708 || true
   modprobe fbtft_device name=pitft verbose=0 rotate=${TFT_ROTATE:-0} || true

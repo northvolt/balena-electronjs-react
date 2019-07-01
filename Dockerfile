@@ -29,9 +29,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   fbset \
   libexpat-dev && rm -rf /var/lib/apt/lists/*
 
+
+
 RUN echo "#!/bin/bash" > /etc/X11/xinit/xserverrc \
   && echo "" >> /etc/X11/xinit/xserverrc \
   && echo 'exec /usr/bin/X -s 0 dpms -nocursor -nolisten tcp "$@"' >> /etc/X11/xinit/xserverrc
+# COPY ./xinitrc /root/.xinitrc
+# COPY ./10-monitor.conf /usr/share/X11/xorg.conf.d/10-monitor.conf
+# COPY ./40-libinput.conf /usr/share/X11/xorg.conf.d/40-libinput.conf
 
 # Move to app dir
 WORKDIR /usr/src/app
