@@ -14,6 +14,7 @@ umount /dev/shm && mount -t tmpfs shm /dev/shm
 rm /tmp/.X0-lock &>/dev/null || true
 # rm /tmp/resin/resin-updates.lock &>/dev/null || true
 
+sleep 3
 # startx
 if [ ! -c /dev/fb1 ] && [ "$TFT" = "1" ]; then
   modprobe spi-bcm2708 || true
