@@ -1,6 +1,12 @@
 #!/bin/bash
 export NODE_ENV=production
 
+# wait that the edge server answer before to start the HMI.
+# If the HMI starts to early, it blocks on a white screen.
+while [ "$(curl localhost/status)" != "OK" ]; do
+    echo "waiting for the edge server to connect"
+    sleep 0.5
+done
 
 # By default docker gives us 64MB of shared memory size but to display heavy
 # pages we need more.
@@ -14,7 +20,6 @@ umount /dev/shm && mount -t tmpfs shm /dev/shm
 rm /tmp/.X0-lock &>/dev/null || true
 # rm /tmp/resin/resin-updates.lock &>/dev/null || true
 
-sleep 3
 # startx
 if [ ! -c /dev/fb1 ] && [ "$TFT" = "1" ]; then
   modprobe spi-bcm2708 || true
