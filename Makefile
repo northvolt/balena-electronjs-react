@@ -6,7 +6,7 @@ docker:
 	docker build --build-arg version=$(VERSION) --tag $(DOCKER_IMAGE):$(VERSION) -f Dockerfile .
 
 docker-push:
-	docker push $(DOCKER_IMAGE):$(VERSION)
+	eval $$(aws ecr get-login --region eu-west-1 --no-include-email --registry-ids 112243728910) && docker push $(DOCKER_IMAGE):$(VERSION)
 
 clean:
 	rm -rf build
